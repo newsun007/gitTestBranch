@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <script src="./jquery.min.js"></script>
+  <script>  
+   $.ajax({
+     url:'http://183.3.149.246:1379/ReportSXCG/GetNumber',
+     type:'post',
+     data:{
+      "key":'13600088213'
+     },
+     success:function(res){
+      var data=JSON.parse(res.Result).message[2];
+      console.log(data)
+     },
+     error:function(err){
+      console.log(err)
+     }
+   })
+  </script>
+</body>
+</html>
